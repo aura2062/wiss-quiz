@@ -12,7 +12,7 @@ function App() {
       <br />
       <Welcome />
       <br />
-      <Counter />
+      <Counter startwert={10} titel={"Zähler"} incrementBy={2}/>
       <br />
       <Footer />
     </div>
