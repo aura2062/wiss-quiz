@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Counter({startwert, titel, incrementBy}) {
+function Counter({startwert = 0, titel = "Zähler", incrementBy = 1}) {
     const [count, setCount] = useState(startwert);
     const [istSichtbar, setIstSichtbar] = useState(true);
     const [numberOfClicks, setNumberOfClicks] = useState(0);
@@ -34,10 +34,11 @@ function Counter({startwert, titel, incrementBy}) {
             <button onClick={() => {toggle(); countClick();}}>
                 {istSichtbar? "Counter verstecken" : "Counter anzeigen"}
             </button>
-            <p>anzahl an totalen Clicks: {numberOfClicks} </p>
             { istSichtbar && (
                 <div>
-                    <p>Aktueller Zähler: {count}</p>
+                    <p>anzahl an totalen Clicks: {numberOfClicks} </p>
+                    
+                    <p>{titel}: {count}</p>
                     <button onClick={() => {erhoehen(); countClick();}}>Erhöhen</button>
                     <button onClick={() => {verringern(); countClick();}}>Verringern</button>
                     <button onClick={() => {zuruecksetzen(); countClick();}}>Zuruecksetzen</button>
