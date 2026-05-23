@@ -1,6 +1,6 @@
 import './App.css';
 import Welcome from './Welcome.jsx';
-
+import Footer from './Footer.jsx';
 
 const username = "aura";
 
@@ -12,6 +12,9 @@ function App() {
       <br />
       <br />
       <Welcome />
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 }
