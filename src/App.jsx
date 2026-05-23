@@ -1,8 +1,7 @@
 import './App.css';
 import Welcome from './Welcome.jsx';
 import Footer from './Footer.jsx';
-
-const username = "aura";
+import Counter from './Counter.jsx';
 
 function App() {
   return (
@@ -13,6 +12,7 @@ function App() {
       <br />
       <Welcome />
       <br />
+      <Counter />
       <br />
       <Footer />
     </div>
