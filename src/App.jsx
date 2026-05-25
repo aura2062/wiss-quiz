@@ -1,41 +1,29 @@
 import './App.css';
-import Button from './Button';
 import { useState } from 'react';
+import Question from './Question.jsx';
+import Footer from './Footer.jsx';
 
-const question = {
+const q1 = {
   text: "Welcher Begriff kommt im ICAO-Buchstabieralphabet zuerst?",
   answers: ["Alfa", "Bravo", "Charlie", "Meow"],
   correctAnswer: "Alfa"
 };
 
 function App() {
-  const [feedback, setFeedback] = useState(null);
   const [score, setScore] = useState(0);
-  const [isAnswered, setIsAnswered] = useState(false);
-
-  const handleAnswerClick = (selectedAnswer) => {
-    setIsAnswered(true);
-  
-    if (selectedAnswer === question.correctAnswer) {
-      setFeedback("Richtig!");
-      setScore(score => score + 1);
-    } else {
-      setFeedback(`Falsch! Die richtig Antwort wäre: ${question.correctAnswer}`);
-    }
-  };  
 
   return (
     <div>
       <h1>Willkommen beim WISS-Quiz!</h1>
-      <h2>{question.text}</h2>
-      
-      <div>
-        {question.answers.map((answer) => ( <Button key = {answer} text = {answer} onClick={ () => handleAnswerClick(answer)} disabled={isAnswered}/>))}
-      </div>
-      
-      {feedback && <p>{feedback}</p>}
+      <Question question={q1} setScore={setScore}/>
+      <Question question={q1} setScore={setScore}/>
+      <Question question={q1} setScore={setScore}/>
+      <Question question={q1} setScore={setScore}/>
+      <Question question={q1} setScore={setScore}/>
+
       <p>score is: {score}</p>
 
+      <Footer />
     </div>
   );
 }
