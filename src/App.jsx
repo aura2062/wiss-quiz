@@ -12,7 +12,7 @@ function App() {
   const [feedback, setFeedback] = useState(null);
   const [score, setScore] = useState(0);
   const [isAnswered, setIsAnswered] = useState(false);
-  
+
   const handleAnswerClick = (selectedAnswer) => {
     setIsAnswered(true);
   
@@ -30,8 +30,9 @@ function App() {
       <h2>{question.text}</h2>
       
       <div>
-        {question.answers.map((answer) => ( <Button key = {answer} text = {answer} onClick={ () => handleAnswerClick(answer)} />))}
+        {question.answers.map((answer) => ( <Button key = {answer} text = {answer} onClick={ () => handleAnswerClick(answer)} disabled={isAnswered}/>))}
       </div>
+      
       {feedback && <p>{feedback}</p>}
       <p>score is: {score}</p>
 
