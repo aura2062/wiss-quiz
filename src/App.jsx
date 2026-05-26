@@ -8,15 +8,14 @@ import { Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
+    
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/quiz" element={<Quiz />} />
       </Routes>
-    <Footer />
-    </div>
+    
   );
 }
 
