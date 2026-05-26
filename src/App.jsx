@@ -1,32 +1,35 @@
 import './App.css';
-import { useState } from 'react';
-import Question from './Question.jsx';
-import Footer from './Footer.jsx';
-
-const q1 = {
-  text: "Welcher Begriff kommt im ICAO-Buchstabieralphabet zuerst?",
-  answers: ["Alfa", "Bravo", "Charlie", "Meow"],
-  correctAnswer: "Alfa"
-};
+import Footer from './Footer';
+import Quiz from './pages/Quiz';
+import Home from './pages/Home';
+import { Routes, Route, Link } from 'react-router-dom';
 
 function App() {
-  const [score, setScore] = useState(0);
-
   return (
-    <div>
-      <h1>Willkommen beim WISS-Quiz!</h1>
-      <Question question={q1} setScore={setScore}/>
-      <Question question={q1} setScore={setScore}/>
-      <Question question={q1} setScore={setScore}/>
-      <Question question={q1} setScore={setScore}/>
-      <Question question={q1} setScore={setScore}/>
-
-      <p>score is: {score}</p>
-
-      <Footer />
+    <div className="App">
+      <nav className="App-nav">
+        <Link to="/">Home</Link>
+        <Link to="/quiz">Quiz</Link>
+      </nav>
+      <hr />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/quiz" element={<Quiz />} />
+      </Routes>
+    <Footer />
     </div>
   );
 }
 
-
 export default App;
+
+/*
+
+        <Link to="/setup">Quiz-Setup</Link>
+        <Link to="/impressum">Impressum</Link>
+
+
+        <Route path="/setup" element={<QuizSetup />} />
+        <Route path="/impressum" element={<Impressum />} />
+*/
