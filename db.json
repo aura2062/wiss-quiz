@@ -1,0 +1,49 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "category": "Sport",
+      "difficulty": "leicht",
+      "text": "Welches Land hat die meisten FIFA-Weltmeisterschaften gewonnen?",
+      "answers": ["Brasilien", "Italien", "Argentinien", "Deutschland"],
+      "correctAnswer": "Brasilien"
+    },
+    {
+      "id": "2",
+      "category": "Technologie",
+      "difficulty": "leicht",
+      "text": "Was bedeutet die Abkürzung 'HTTP'?",
+      "answers": [
+        "HyperText Transfer Protocol",
+        "HyperText Transmission Protocol",
+        "HyperText Transfer Program",
+        "HyperText Transmission Program"
+      ],
+      "correctAnswer": "HyperText Transfer Protocol"
+    },
+    {
+      "id": "3",
+      "category": "Geographie",
+      "difficulty": "mittel",
+      "text": "Welches ist der höchste Berg gemessen von seiner Unterwasserbasis?",
+      "answers": ["Mount Everest", "Mauna Kea", "K2", "Kangchenjunga"],
+      "correctAnswer": "Mauna Kea"
+    },
+    {
+      "id": "4",
+      "category": "Geschichte",
+      "difficulty": "mittel",
+      "text": "In welchem Jahr wurde die Schweizerische Eidgenossenschaft gegründet?",
+      "answers": ["1291", "1315", "1351", "1499"],
+      "correctAnswer": "1291"
+    },
+    {
+      "id": "5",
+      "category": "Sport",
+      "difficulty": "schwer",
+      "text": "Wieviele Spieler stehen bei einem Cricket Match auf dem Feld?",
+      "answers": ["9", "10", "11", "13"],
+      "correctAnswer": "13"
+    }
+  ]
+}
