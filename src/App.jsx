@@ -1,21 +1,20 @@
 import './App.css';
-import Footer from './Footer';
 import Quiz from './pages/Quiz';
 import Home from './pages/Home';
-import Navigation from './components/Navigation';
+import Layout from './components/Layout';
 import { Routes, Route, Link } from 'react-router-dom';
 
 
 function App() {
   return (
-    
-      <Navigation />
+    <div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/" element={<Layout />} >
+          <Route index element={<Home />} />
+          <Route path="/quiz" element={<Quiz />} />
+        </Route>
       </Routes>
-    
+    </div>
   );
 }
 
