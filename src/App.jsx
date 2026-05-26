@@ -2,16 +2,14 @@ import './App.css';
 import Footer from './Footer';
 import Quiz from './pages/Quiz';
 import Home from './pages/Home';
+import Navigation from './components/Navigation';
 import { Routes, Route, Link } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
-      <nav className="App-nav">
-        <Link to="/">Home</Link>
-        <Link to="/quiz">Quiz</Link>
-      </nav>
-      <hr />
+      <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
