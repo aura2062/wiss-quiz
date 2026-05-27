@@ -8,13 +8,21 @@ function Quiz({Category="any", /*NumberOfQuestions=10*/ reset_trigger}) {
     const [score, setScore] = useState(0);
     const [questions, setQuestions] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-
+    const [error, setError] = useState(null);
     useEffect (() => {
         async function loadQuestions() {
-            const response = await fetch(`${API_URL}/questions`);
-            const data = await response.json();
-            setQuestions(data);
-            setIsLoading(false);
+            try {
+                const response = await fetch(`${API_URL}/questions`);
+                if (!response.ok) {
+                    throw new Error("Fragen konnten nicht geladen werden");
+                }
+                const data = await response.json();
+                setQuestions(data);
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setIsLoading(false);
+            }
         }
         loadQuestions();
     }, []);
@@ -40,7 +48,17 @@ function Quiz({Category="any", /*NumberOfQuestions=10*/ reset_trigger}) {
                 <h1>Quiz</h1>
                 <p>Lade Fragen...</p>
             </div>
-        )
+        );
+    }
+
+    if (error) {
+        return (
+            <div>
+                <h2>Quiz</h2>
+                <p>Fehler: {error}</p>
+                <Button text="Erneut versuchen" onClick={()=>{window.location.reload()}}/>
+            </div>
+        );
     }
 
     if (!isLoading && showEndScreen) {
@@ -66,8 +84,7 @@ function Quiz({Category="any", /*NumberOfQuestions=10*/ reset_trigger}) {
             
             <p>score is: {score}</p>
         </div>
-    )
-    
+    );
 }
 
 export default Quiz;
