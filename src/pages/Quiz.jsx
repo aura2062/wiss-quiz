@@ -20,14 +20,11 @@ function Quiz({Category="any" /*NumberOfQuestions=10*/}) {
     const [questionIndex, setQuestionIndex] = useState(0);
     const currentQuestion = questions[questionIndex];
     const [isAnswered, setIsAnswered] = useState(false);
-
+    const isLastQuestion = questionIndex === questions.length - 1;
+    
     const nextQuestion = () => {
-        if (questions.length>=questionIndex) {
-            setQuestionIndex(questionIndex => questionIndex + 1);
-            setIsAnswered(false);
-        } else {
-            
-        }
+        setQuestionIndex(questionIndex => questionIndex + 1);
+        setIsAnswered(false);
     };
     
 
@@ -39,7 +36,8 @@ function Quiz({Category="any" /*NumberOfQuestions=10*/}) {
                 <Question key={currentQuestion.id} question={currentQuestion} setScore={setScore} isAnswered={isAnswered} setIsAnswered={setIsAnswered} />
             </div>
 
-            {isAnswered && <Button text="naechste Frage" onClick={nextQuestion}/>}
+            {!isLastQuestion && isAnswered && <Button text="naechste Frage" onClick={nextQuestion}/>}
+            
             <p>score is: {score}</p>
         </div>
     )
