@@ -2,21 +2,10 @@ import Question from "../components/Question";
 import { useState } from "react";
 import Button from "../components/Button";
 
-const questions = [{
-  id: 0,
-  text: "Welcher Begriff kommt im ICAO-Buchstabieralphabet zuerst?",
-  answers: ["Alfa", "Bravo", "Charlie", "Meow"],
-  correctAnswer: "Alfa"
-}, {
-  id: 1,
-  text: "Was ist Blau?",
-  answers: ["Schluempfe", "das Weltall", "die Sonne", "nichts"],
-  correctAnswer: "Schluempfe"
-}];
-
 
 function Quiz({Category="any", /*NumberOfQuestions=10*/ reset_trigger}) {
     const [score, setScore] = useState(0);
+    const [questions, setQuestions] = useState([]);
     const [questionIndex, setQuestionIndex] = useState(0);
     const currentQuestion = questions[questionIndex];
     const [isAnswered, setIsAnswered] = useState(false);
