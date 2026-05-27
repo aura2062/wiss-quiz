@@ -8,6 +8,7 @@ function Layout() {
             <header>
                 <Navigation />
             </header>
+            <hr />
             <main>
                 <Outlet />
             </main>
