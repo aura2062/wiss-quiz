@@ -2,7 +2,7 @@ import './App.css';
 import Quiz from './pages/Quiz';
 import Home from './pages/Home';
 import Layout from './components/Layout';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import { useState } from "react";
 
 
