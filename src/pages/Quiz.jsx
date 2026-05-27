@@ -14,6 +14,7 @@ const questions = [{
 
 function Quiz({Category="any" /*NumberOfQuestions=10*/}) {
     const [score, setScore] = useState(0);
+    const [questionIndex, setQuestionIndex] = useState(0);
 
 
     return (
