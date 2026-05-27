@@ -2,8 +2,7 @@
 import Button from './Button';
 import {useState} from 'react';
 
-function Question({ question = {text: "none", answers: ["none","empty"], correctAnswer: "none"}, setScore = null, }) {
-    const [isAnswered, setIsAnswered] = useState(false);
+function Question({ question = {text: "none", answers: ["none","empty"], correctAnswer: "none"}, setScore = null, setIsAnswered = null }) {
     const [feedback, setFeedback] = useState(null);
 
     const handleAnswerClick = (selectedAnswer) => {

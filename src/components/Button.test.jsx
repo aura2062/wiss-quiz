@@ -1,6 +1,7 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
+
 import Button from "./Button";
 
 describe("Button component", () => {
@@ -16,4 +17,24 @@ describe("Button component", () => {
 
         expect(button1).toBeInTheDocument();
     });
+
+    it("executes onClick function when clicked", async () => {
+        const user = userEvent.setup();
+        const handleClick = vi.fn();
+        const buttonText = "Klicke mich für funktion zu passieren";
+
+        render(<Button text={buttonText} onClick={handleClick} />);
+    
+        await user.click(screen.getByText(buttonText));
+
+        expect(handleClick).toHaveBeenCalledTimes(1);
+    });
+
+    it("is deactivated when disabled is true", () => {
+        render(<Button text="test" onClick={vi.fn} disabled={true}/>);
+
+        expect(screen.getByText("test")).toBeDisabled();
+    });
 });
+
+    
