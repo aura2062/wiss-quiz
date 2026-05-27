@@ -22,8 +22,12 @@ function Quiz({Category="any" /*NumberOfQuestions=10*/}) {
     const [isAnswered, setIsAnswered] = useState(false);
 
     const nextQuestion = () => {
-        setQuestionIndex(questionIndex => questionIndex + 1);
-        setIsAnswered(false);
+        if (questions.length>=questionIndex) {
+            setQuestionIndex(questionIndex => questionIndex + 1);
+            setIsAnswered(false);
+        } else {
+            
+        }
     };
     
 

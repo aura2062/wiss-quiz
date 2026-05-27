@@ -19,13 +19,3 @@ function App() {
 }
 
 export default App;
-
-/*
-
-        <Link to="/setup">Quiz-Setup</Link>
-        <Link to="/impressum">Impressum</Link>
-
-
-        <Route path="/setup" element={<QuizSetup />} />
-        <Route path="/impressum" element={<Impressum />} />
-*/
