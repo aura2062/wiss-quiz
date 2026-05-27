@@ -32,10 +32,10 @@ function Quiz({Category="any" /*NumberOfQuestions=10*/}) {
         <div>
             <p>Willkommen beim Quiz über Kategories {Category}</p>
             <div>
-                <Question key={currentQuestion.id} question={currentQuestion} setScore={setScore} setIsAnswered={setIsAnswered} />
+                <Question key={currentQuestion.id} question={currentQuestion} setScore={setScore} isAnswered={isAnswered} setIsAnswered={setIsAnswered} />
             </div>
 
-            {isAnswered && <Button text="nächste Frage" onClick={nextQuestion()}/>}
+            {isAnswered && <Button text="naechste Frage" onClick={nextQuestion}/>}
             <p>score is: {score}</p>
         </div>
     )
